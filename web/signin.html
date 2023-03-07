@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Student Application</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="signin.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body onload="updateLanguage()">
+<!--        <select onchange="changeLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="kinya">Kinyarwanda</option>
+        </select>-->
+        <div class="hero">
+            <nav>
+                <img src="images/menu.png" class="menu-img">
+                <img src="images/img.png" class="logo">
+                <ul>
+                    <li><a href="index.html">Courses</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="signup.html">SignUp</a></li>
+                    <li><a href="signin.html">SignIn</a></li>
+                </ul>
+                
+                <button type="button" onclick="toggleBtn()" id="btn"><span></span></button>
+            </nav>
+            
+            <div class="lamp-container">
+                <img src="images/lamp.png" class="lamp">
+                <img src="images/light.png" class="light" id="light">
+
+            </div>
+
+        
+            <div class="text-container">
+                <form action="SignInServlet" method="POST" class="form-container" onsubmit = "return validate()">
+                    
+                    <p id="error"></p>
+                    <h3 id="signip">Login</h3>
+                    <div class ="form-grp">
+                        <label for="username">Email</label><br>
+                        <input type="text" name="email" placeholder="Enter your Email" id="user" >
+                        <i class="fa fa-times u_times"></i>
+                        <i class="fa fa-check u_check"></i>
+                    </div>
+                     <div class ="form-grp">
+                        <label for="password">Password</label><br>
+                        <input type="password" name="password" placeholder="password" id="pass">
+                        <i class="fa fa-times p_times"></i>
+                        <i class="fa fa-check p_check"></i>
+                    </div>
+                     <div class ="form-grp">
+                        <input type="submit" name="login-btn" value="Login">
+                    </div>
+                   
+                    
+                </form>
+                </div>
+                  <div id="google_translate_element"></div>
+
+        </div>
+
+        <script>
+            var btn = document.getElementById("btn");
+            var on = document.getElementById("light");
+
+            function toggleBtn(){
+                btn.classList.toggle("active");
+                on.classList.toggle("on");
+            }
+
+            
+        </script>
+        <script src="lang.js"></script>
+        <script src="signin.js"></script>
+                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+                             <script type="text/javascript"> 
+    function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }   
+        </script>
+ </body>
+</html>

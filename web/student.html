@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Student Application</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="signin.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="hero">
+            <nav>
+                <img src="images/menu.png" class="menu-img">
+                <img src="images/img.png" class="logo">
+                <ul>
+                    <li><a href="index.html">Courses</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="signup.html">SignUp</a></li>
+                    <li><a href="signin.html">SignIn</a></li>
+                </ul>
+                
+                <button type="button" onclick="toggleBtn()" id="btn"><span></span></button>
+            </nav>
+            
+            <div class="lamp-container">
+                <img src="images/lamp.png" class="lamp">
+                <img src="images/light.png" class="light" id="light">
+
+            </div>
+
+
+
+<form action="RegisterStudentServlet" method="POST"  class="form-container" onsubmit = "return validate()">
+    <p id="error-image"></p>
+    <h3>Student Admission</h3>
+     <div class ="form-grp">
+        <label for="rmail">Email</label><br>
+        <input type="email" name="email" placeholder="Email" id="pass">
+         <i class="fa fa-times u_times"></i>
+        <i class="fa fa-check u_check"></i>
+        
+    </div>
+   
+     <div class ="form-grp">
+        <label for="firstname">First Name</label><br>
+        <input type="text" name="fname" placeholder="firstname" id="pass">
+         <i class="fa fa-times u_times"></i>
+        <i class="fa fa-check u_check"></i>
+        
+    </div>
+          <div class ="form-grp">
+              <label for="lastname">last Name</label><br>
+        <input type="text" name="lastname" placeholder="lasttname" id="pass">
+        
+    </div>
+     <div class ="form-grp">
+        <label for="gender">Gender</label><br>
+        <input type="text" name="gender" placeholder="gender" id="user">
+        <i class="fa fa-times u_times"></i>
+        <i class="fa fa-check u_check"></i>
+    </div>
+    <div class ="form-grp">
+        <label for="age">Age</label><br>
+        <input type="number" name="age" placeholder="Age" id="user">
+        <i class="fa fa-times u_times"></i>
+        <i class="fa fa-check u_check"></i>
+    </div>
+    <div class ="form-grp">
+        <label for="country">country</label><br>
+        <input type="text" name="country" placeholder="Country" id="user">
+        <i class="fa fa-times u_times"></i>
+        <i class="fa fa-check u_check"></i>
+    </div>
+                 <div class ="form-grp">
+        <label for="photo">Select a Photo</label><br>
+        <input type="file" name="photo" accept="image/*" id="img" onchange="return imageValidation()">
+        
+    </div>
+            <div class ="form-grp">
+        <label for="photo">Select a file</label><br>
+        <input type="file" name="file" accept=".pdf" id="file" onchange="return fileValidation()" >
+        
+    </div>
+     <div class ="form-grp">
+        <input type="submit" name="submit-btn" value="Register submission">
+    </div>
+   
+    
+</form>
+</div>
+        
+      <script>
+    var btn = document.getElementById("btn");
+    var on = document.getElementById("light");
+
+    function toggleBtn(){
+        btn.classList.toggle("active");
+        on.classList.toggle("on");
+    }
+    function imageValidation() {
+            var fileInput =
+                document.getElementById('img');
+             
+            var filePath = fileInput.value;
+         
+            // Allowing file type
+            var allowedExtensions =
+                    /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+             
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Invalid file type');
+                fileInput.value = '';
+                return false;
+            }
+            else
+            {
+             
+                // Image preview
+                if (fileInput.files && fileInput.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.getElementById(
+                            'imagePreview').innerHTML =
+                            '<img src="' + e.target.result
+                            + '"/>';
+                    };
+                     
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
+            }
+        }
+</script>
+<script src="file.js"></script>
+<script src="lang.js"></script>
+</body>
+
+</html>
