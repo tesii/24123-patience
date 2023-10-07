@@ -67,13 +67,13 @@ props.put("mail.smtp.port", "587");
           Session session = Session.getInstance(props,
          new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-               return new PasswordAuthentication("sethreas@gmail.com", "msnyqorwprqegjww");
+               return new PasswordAuthentication("tesipatience15@gmail.com", "oaajxfvdqbuihyxh");
             }
          });
          try {
          // Create a new email message
          Message message = new MimeMessage(session);
-         message.setFrom(new InternetAddress("sethreas@gmail.com"));
+         message.setFrom(new InternetAddress("tesipatience15@gmail.com"));
          message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
          message.setSubject("Confirmation Email");
          message.setText("Thank you for registering.");
