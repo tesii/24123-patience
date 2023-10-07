@@ -67,7 +67,11 @@ props.put("mail.smtp.port", "587");
           Session session = Session.getInstance(props,
          new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
+
                return new PasswordAuthentication("tesipatience15@gmail.com", "oaajxfvdqbuihyxh");
+
+             
+
             }
          });
          try {
