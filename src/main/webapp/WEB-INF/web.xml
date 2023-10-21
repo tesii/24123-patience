@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>WebtechAssignment</display-name>
+  <welcome-file-list>
+    <welcome-file>Signup.html</welcome-file>
+  </welcome-file-list>
+
+
+  <filter>
+    <display-name>EmailFilter</display-name>
+    <filter-name>EmailFilter</filter-name>
+    <filter-class>com.auca.patience.EmailFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EmailFilter</filter-name>
+    <url-pattern>/login</url-pattern>
+  </filter-mapping>
+  <filter>
+    <display-name>EmailFilter1</display-name>
+    <filter-name>EmailFilter1</filter-name>
+    <filter-class>com.auca.patience.EmailFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EmailFilter1</filter-name>
+    <url-pattern>/login</url-pattern>
+  </filter-mapping>
+  <filter>
+    <display-name>PasswordFilter</display-name>
+    <filter-name>PasswordFilter</filter-name>
+    <filter-class>com.auca.patience.PasswordFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>PasswordFilter</filter-name>
+    <url-pattern>/login</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>EmailFilter</filter-name>
+    <url-pattern>/SendEmail</url-pattern>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>PasswordFilter</filter-name>
+    <url-pattern>/SendEmail</url-pattern>
+</filter-mapping>
+
+</web-app>

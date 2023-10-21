@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forgot Password Page</title>
+   
+         <style>
+        body {
+            background-image: url(images/purple.jpeg);
+            background-size: cover; /* Ensure the image covers the entire background */
+            background-position: center; /* Center the image horizontally and vertically */
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: white;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+	
+    <h1>Forgot Password</h1>
+    <form id="forgotPasswordForm">
+		<fieldset >
+         <label for="email">Enter Your Email:
+        <input type="email" id="email" name="email" placeholder="Email" required/><br>
+         </label> 
+          <button type="reset">Reset Password</button>
+         <button onclick="location.href='login.html'">Back to Login</button>
+
+        </fieldset>
+          </form>
+   
+</body>
+</html>
